@@ -138,20 +138,21 @@ public class MainActivity extends AppCompatActivity {
         toggleButtonText(true);
     }
 
+
     public void updatePoem(View view) {
         toggleButtonText(false);
     }
 
-    private String selectPoemFromAzureTable() {
-        try {
-            PoemTableQuery p = new PoemTableQuery();
-            p.start();
-            p.join();
-            return p.getPoemText();
-        } catch (Exception e) {
-            return e.toString();
-        }
-    }
+//    private String selectPoemFromAzureTable() {
+//        try {
+//            PoemTableQuery p = new PoemTableQuery();
+//            p.start();
+//            p.join();
+//            return p.getPoemText();
+//        } catch (Exception e) {
+//            return e.toString();
+//        }
+//    }
 
     private void toggleButtonText(boolean clearText) {
         Button addButton = (Button)findViewById(R.id.addButton);

@@ -51,14 +51,8 @@ public class PoemQuery {
             public void subscribe(ObservableEmitter<Poem> emitter) throws Exception {
                 try {
                     //List<String> todos = Arrays.asList("从军令11", "【唐】", "王昌龄");
-                    Poem poem = new Poem();
-                    poem.setTitle("念奴娇 - 赤壁怀古");
-                    poem.setDynasty("【宋】");
-                    poem.setAuthor("苏轼");
-                    poem.setFullText("大江东去，浪淘尽，千古风流人物。\n" +
-                            "故垒西边，人道是，三国周郎赤壁。\n" +
-                            "乱石穿空，惊涛拍岸，卷起千堆雪。\n" +
-                            "江山如画，一时多少豪杰。");
+                    PoemTableQuery p = new PoemTableQuery();
+                    Poem poem = p.addNewPoem();
 
                     if (!emitter.isDisposed())
                         emitter.onNext(poem);

@@ -4,19 +4,13 @@ import com.microsoft.azure.storage.*;
 import com.microsoft.azure.storage.table.*;
 import com.microsoft.azure.storage.table.TableQuery.*;
 
-/**
- * Created by Y3 on 6/14/18.
- */
-
-public class PoemEntity extends TableServiceEntity {
-    private static final String PoemTablePartitionKey = "";
-
-    public PoemEntity(String id) {
-        this.partitionKey = PoemTablePartitionKey;
-        this.rowKey = id;
+public class PoemTableEntity extends TableServiceEntity {
+    public PoemTableEntity(String partitionKey, String rowKey) {
+        this.partitionKey = partitionKey;
+        this.rowKey = rowKey;
     }
 
-    public PoemEntity() { }
+    public PoemTableEntity() { }
 
     private String title;
     private String author;
